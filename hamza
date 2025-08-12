@@ -1,0 +1,133 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Hamza ❤️ My Heart Belongs to You</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #d23669;
+            margin-bottom: 20px;
+        }
+        .heart {
+            color: #ff4757;
+            font-size: 24px;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        p {
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+        .btn {
+            background: #ff6b81;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #ff4757;
+            transform: scale(1.05);
+        }
+        .hidden {
+            display: none;
+        }
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hamza, I Need You to Know This <span class="heart">❤️</span></h1>
+        
+        <p>First, I’m so sorry for ever making you doubt my love for you.</p>
+        
+        <p>When I talked about my past, it was never because I miss it or want it back. <strong>You are my present and my future.</strong> My heart belongs to you, completely.</p>
+        
+        <p>I know words alone can’t fix things, but please believe me:</p>
+        
+        <ul style="text-align: left; list-style-type: none; padding: 0;">
+            <li>✨ <strong>You are the only one I want.</strong> My past doesn’t define us.</li>
+            <li>✨ <strong>I love you more than anything.</strong> Every day, I choose you.</li>
+            <li>✨ <strong>I hate that I hurt you.</strong> I’ll do better, because you deserve that.</li>
+        </ul>
+        
+        <button class="btn" onclick="showPromise()">Click for My Promise</button>
+        
+        <div id="promise" class="hidden">
+            <p>From now on, I’ll be more careful with my words. Not because I have anything to hide, but because <strong>your heart matters more to me than anything else.</strong></p>
+            <p>I love you, Hamza. Today, tomorrow, always. <span class="heart">❤️</span></p>
+        </div>
+    </div>
+
+    <div class="floating-hearts" id="hearts"></div>
+
+    <script>
+        function showPromise() {
+            document.getElementById('promise').style.display = 'block';
+            document.querySelector('.heart').style.animation = 'heartbeat 1s infinite';
+            
+            // Create floating hearts
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    createHeart();
+                }, i * 100);
+            }
+        }
+        
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.style.position = 'fixed';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = Math.random() * 100 + 'vh';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            heart.style.opacity = Math.random() * 0.5 + 0.5;
+            heart.style.animation = `float ${Math.random() * 3 + 2}s linear forwards`;
+            
+            document.getElementById('hearts').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
+```
